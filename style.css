@@ -1,245 +1,40 @@
-* {
-    margin: 0px;
-    padding: 0px;
-}
+<!DOCTYPE html>
+<html lang="en">
 
-body {
-    background-color: #4bcccc;
-    font-family: 'Poppins', sans-serif;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <script src="https://kit.fontawesome.com/0b87f0ca63.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
+</head>
 
-#todowrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 98vh;
-}
+<body>
+    <div id="todowrapper">
+        <div id="todo">
+            <textarea id="enter-todo" spellcheck="false"></textarea> <i class="fa fa-plus" id="addTodo"></i>
+            <!-- filters -->
 
-#todo {
-    background-color: #fff;
-    width: 22vw;
-    height: 57vh;
-    border-radius: 10px;
-    padding: 10px;
-    padding-top: 40px;
-    margin: 0px;
-}
+            <div id="status">
+                <span class ="active" id="all">All</span>
+                <span id="pending">Pending</span>
+                <span id="completed">Completed</span>
+            </div>
 
-textarea {
-    border: 1px solid rgba(128, 128, 128, 0.627);
-    display: flex;
-    margin: auto;
-    width: 88%;
-    height: 30px;
-    margin-bottom: 10px;
-    padding-left: 10px;
-    font-size: 18px;
-    color: rgba(0, 0, 0, 0.566);
-    resize: none;
-    padding-top: 10px;
-    padding-right: 18px;
-    margin-bottom: 40px;
-}
 
-textarea {
-    outline: 0px solid rgba(128, 128, 128, 0.627);
-}
 
-.todo-info-wrap {
-    border-top: 1px solid grey;
-    padding: 15px 0px 5px 5px;
-    max-width: 100%;
-    margin: 0px;
-}
+            <div id="todos">
+            </div>
+            <span id="tasks-length"></span>
 
-.todo-info-wrap:last-child {
-    border-bottom: 1px solid #000;
-}
+        </div>
 
-#todos {
-    overflow-y: auto;
-    max-height: 266px;
-    overflow-x: hidden;
-    margin: 0px;
-}
+    </div>
+        <script src="script.js"></script>
+</body>
 
-.todo-information {
-    white-space: nowrap;
-    overflow: auto;
-    max-width: 93%;
-    margin: 0px;
-}
-
-.todo .todo-information ::-webkit-scrollbar {
-    height: 1px;
-}
-
-.fa-pencil {
-    position: relative;
-    right: -18.3vw;
-    top: 4px;
-    cursor: pointer;
-    font-size: 11px;
-}
-
-.fa-trash {
-    position: relative;
-    right: -15vw;
-    top: 4px;
-    cursor: pointer;
-    font-size: 11px;
-}
-
-input[type=checkbox] {
-    margin-right: 10px;
-}
-
-.todo-info-wrap ::-webkit-scrollbar {
-    display: none;
-}
-
-.todo-info-wrap:hover ::-webkit-scrollbar {
-    display: block;
-}
-
-::-webkit-scrollbar {
-    width: 10px;
-    height: 6px;
-}
-
-::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey;
-    border-radius: 10px;
-    display: none;
-}
-
-::-webkit-scrollbar-thumb {
-    background: grey;
-    border-radius: 10px;
-}
-
-.fa-plus {
-    transform: translateX(20vw);
-    position: absolute;
-    top: 25vh;
-}
-
-.fa-trash,
-.fa-pencil {
-    margin: 5px;
-    margin-top: 10px;
-}
-
-    	@media (max-width :300px) {
-    	#todo {
-    	width: 80vw;
-        height:400px;
-    	}
-    	.fa-trash {
-    	right: -55vw;
-    	font-size: 9px;
-    	}
-    	.fa-pencil {
-    	font-size: 9px;
-    	right: -55vw;
-    	}
-    	.fa-plus {
-    	right: 33vw;
-    	display:none;
-    	}
-    	#todos {
-    	max-height: 280px;
-    	}
-    	}
-    	
-    	@media (min-width:301px) and (max-width:380px) {
-    	#todo {
-    	width: 70vw;
-    	height:410px;
-    	}
-    	.fa-trash {
-    	right: -51vw;
-    	font-size: 9px;
-    	}
-    	.fa-pencil {
-    	font-size: 9px;
-    	right: -52vw;
-    	}
-    	.fa-plus {
-    	display:none;
-    	}
-    	#todos {
-    	max-height: 290px;
-    	}
-    	}
-    	
-    	@media (min-width:381px) and (max-width:550px) {
-    	#todo {
-    	width: 70vw;
-    	height:430px;
-    	}
-    	.fa-trash {
-    	right: -47vw;
-    	font-size: 10px;
-    	}
-    	.fa-pencil {
-    	font-size: 10px;
-    	right: -60vw;
-    	}
-    	.fa-plus {
-    	display:none;
-    	}
-    	 #todos {
-    	 max-height: 300px;
-    	 }
-    	}
-    	
-    	@media (min-width:551px) and (max-width:800px) {
-    	#todo {
-    	width: 40vw;
-    	}
-    	.fa-trash {
-    	right: -30vw;
-    	font-size: 10px;
-    	}
-    	.fa-pencil {
-    	font-size: 10px;
-    	right: -30vw;
-    	}
-    	.fa-plus {
-    	right: 51vw;
-    	}
-    	}
-    	
-    	@media (min-width:801px) and (max-width:1000px) {
-    	#todo {
-    	width: 35vw;
-    	}
-    	.fa-trash {
-    	right: -24.5vw;
-    	font-size: 10px;
-    	}
-    	.fa-pencil {
-    	font-size: 10px;
-    	right: -29.5vw;
-    	}
-    	.fa-plus {
-    	right: 54vw;
-    	}
-    	}
-    	
-    	@media (min-width:1001px) and (max-width:1150px) {
-    	#todo {
-    	width: 27vw;
-    	}
-    	.fa-trash {
-    	right: -19.9vw;
-    	}
-    	.fa-pencil {
-    	right: -20vw;
-    	}
-    	.fa-plus {
-    	right: 58vw;
-    	}
-    	}
+</html>
