@@ -195,8 +195,8 @@ input[type=checkbox] {
 }
 
 @media (min-width:301px) and (max-width:380px) {
-    #todo {
-        width: 70vw;
+        #todo {
+        width: 85vw;
     }
     .fa-trash {
         right: -51vw;
@@ -204,11 +204,12 @@ input[type=checkbox] {
     }
     .fa-pencil {
         font-size: 9px;
-        right: -52vw;
+        right: -69vw;
     }
     #status {
         font-size: 15px;
     }
+
 
 }
 
