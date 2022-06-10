@@ -85,9 +85,9 @@ function taskLengthFunc() {
     todos.length
 
     if (todos.length < 2) {
-        return "Task = " + todos.length;
+        return "Total Task = " + todos.length;
     } else {
-        return "Tasks = " + todos.length;
+        return "Total Tasks = " + todos.length;
     }
 }
 
