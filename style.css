@@ -173,18 +173,20 @@ input[type=checkbox] {
     color: #000;
 }
 
+//media queries
+
 @media (max-width :300px) {
     #todo {
-        width: 85vw;
+        width: 80vw;
         height: 27rem;
     }
     .fa-trash {
-        right: -52vw;
+        right: -36vw;
         font-size: 9px;
     }
     .fa-pencil {
         font-size: 9px;
-        right: -72vw;
+        right: -58vw;
     }
      .fa-plus {
         display: none;
@@ -197,16 +199,16 @@ input[type=checkbox] {
 
 @media (min-width:301px) and (max-width:380px) {
     #todo {
-        width: 85vw;
+        width: 80vw;
         height: 27rem;
     }
     .fa-trash {
-        right: -57vw;
+        right: -44vw;
         font-size: 9px;
     }
     .fa-pencil {
         font-size: 9px;
-        right: -75vw;
+        right: -63vw;
     }
     #status {
         font-size: 15px;
@@ -215,6 +217,9 @@ input[type=checkbox] {
         display: none;
     }
 }
+
+
+ 
 
 @media (min-width:381px) and (max-width:460px) {
     #todo {
