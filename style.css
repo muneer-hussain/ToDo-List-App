@@ -213,9 +213,9 @@ input[type=checkbox] {
 
 }
 
-@media (min-width:381px) and (max-width:550px) {
+@media (min-width:381px) and (max-width:440px) {
     #todo {
-        width: 60vw;
+        width: 85vw;
     }
     .fa-trash {
         right: -40vw;
@@ -227,6 +227,11 @@ input[type=checkbox] {
     }
 
 }
+@media (min-width:440px) and (max-width:550px) {
+    #todo {
+        width: 65vw;
+    }
+
 
 @media (min-width:551px) and (max-width:800px) {
     #todo {
