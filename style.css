@@ -175,7 +175,7 @@ input[type=checkbox] {
 
 @media (max-width :300px) {
     #todo {
-        width: 80vw;
+        width: 92vw;
     }
     .fa-trash {
         right: -55vw;
