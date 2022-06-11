@@ -176,6 +176,7 @@ input[type=checkbox] {
 @media (max-width :300px) {
     #todo {
         width: 92vw;
+        height : fit-content;
     }
     .fa-trash {
         right: -55vw;
@@ -197,6 +198,7 @@ input[type=checkbox] {
 @media (min-width:301px) and (max-width:380px) {
         #todo {
         width: 95vw;
+
     }
     .fa-trash {
         right: -51vw;
@@ -216,20 +218,22 @@ input[type=checkbox] {
 @media (min-width:381px) and (max-width:440px) {
     #todo {
         width: 85vw;
+        height : fit-content;
     }
     .fa-trash {
-        right: -40vw;
+        right: -20vw;
         font-size: 10px;
     }
     .fa-pencil {
         font-size: 10px;
-        right: -52vw;
+        right: -35vw;
     }
 
 }
 @media (min-width:440px) and (max-width:550px) {
     #todo {
         width: 65vw;
+        height : fit-content;
     }
 
 
@@ -250,6 +254,7 @@ input[type=checkbox] {
 @media (min-width:551px) and (max-width:700px) {
     #todo {
         width: 42vw;
+        height : fit-content;
     }
 }
 
