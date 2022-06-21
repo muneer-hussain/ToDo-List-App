@@ -76,6 +76,11 @@ textarea {
     height: 1px;
 }
 
+#status:hover {
+    text-decoration: none;
+    
+}
+
 .fa-pencil {
     position: relative;
     right: -18.3vw;
@@ -173,8 +178,6 @@ input[type=checkbox] {
     color: #000;
 }
 
-//media queries
-
 @media (max-width :300px) {
     #todo {
         width: 80vw;
@@ -217,9 +220,6 @@ input[type=checkbox] {
         display: none;
     }
 }
-
-
- 
 
 @media (min-width:381px) and (max-width:460px) {
     #todo {
