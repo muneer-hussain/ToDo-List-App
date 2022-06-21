@@ -36,7 +36,7 @@ function showtodos(filters) {
                         </div>
                     </label>
                 </div>
-                        <i class="fa fa-pencil tools" onclick="editTodo(this, ${index}, '${todo.todoWritten}','${filters}')"></i>
+                        <i class="fa fa-pencil tools" onclick="editTodo(${index}, '${todo.todoWritten}')"></i>
                         <i class="fa fa-trash tools" onclick="deleteNote(${index}, '${filters}')"></i>
                 </div>
              </div>
@@ -44,7 +44,7 @@ function showtodos(filters) {
         }
      })
         taskBox.innerHTML = todoHTML;
-        TasksLength.innerHTML = taskLengthFunc() 
+        length(filters);
 
 
 }
@@ -64,10 +64,10 @@ function updateStatus(selectedTask, filter){
         todos[selectedTask.id].status = "pending";
     }
     localStorage.setItem("todos", JSON.stringify(todos))
-    setTimeout(showtodos(filter), 200)    
+    setTimeout(showtodos(filter), 200);
 }
 
-function editTodo(selectedTsk, selectedId, written, filterEdt) {
+function editTodo(selectedId, written) {
     textarea.value = written;
     isupdate = true;
     updateId = selectedId;
@@ -81,18 +81,43 @@ function deleteNote(selectedId, filterdlt) {
     showtodos(filterdlt);
 }
 
-function taskLengthFunc() {
-    todos.length
 
-    if (todos.length < 2) {
-        return "Total Task = " + todos.length;
-    } else {
-        return "Total Tasks = " + todos.length;
+function length(filters) {
+    let pending = 0;
+    let completed = 0;
+
+    todos.forEach((todo) => {
+        if(todo.status == 'pending') {
+            pending = pending + 1;
+        }
+
+        if(todo.status == 'completed') {
+            completed = completed + 1;
+        }
+
+    });
+
+    let task_s = 'Task = ';
+    let length = todos.length;
+
+    if (filters == 'all'){
+        length > 1 ? task_s = 'Tasks = ' : task_s = task_s; 
+        TasksLength.innerHTML = task_s + " " + todos.length;
+  
+    }
+    if (filters == 'pending') {
+            pending > 1 ? task_s = 'Tasks = ' : task_s = task_s; 
+            TasksLength.innerHTML = task_s + pending;
+    }
+
+    if (filters == 'completed') {
+        completed > 1 ? task_s = 'Tasks = ' : task_s = task_s; 
+        TasksLength.innerHTML =  task_s + completed;
     }
 }
 
 
-function addTodo(e) {
+function addTodo() {
      let userTask = textareaTodo.value.trim();
     if (textareaTodo.value != 0) {
         let todoInfo = {
@@ -117,7 +142,10 @@ function addTodo(e) {
 
 
 }
+
 //          ToDo will add when user press enter key 
+
+
 addBtn.addEventListener("click", addTodo)
 document.addEventListener("keydown", (e) => {
     textarea.focus();
@@ -127,5 +155,3 @@ document.addEventListener("keydown", (e) => {
 
     }
 })
-
-
